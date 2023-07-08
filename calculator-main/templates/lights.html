@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Расчет энергоэффективности умного дома</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Расчитай энергоэффективность своего дома!</h1>
+      <p>Реши проблему излишнего электропотребления самостоятельно!</p>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    <h2 class="main__title">Выбери освещение:</h2>
+    <ul class="list" id="list">
+      <li class="list__item">
+        <a href={{size + "/3"}}>
+          <img class="item__img" src="../static/img/light.svg" alt="light">
+          <span>2-4 лампочки</span></a>
+      </li>
+      <!--Задание №2 -->
+      <li class="list__item">
+        <a href={{size + "/5"}}> 
+          <img class="item__img" src="../static/img/light.svg" alt="light">
+          <span>4-6 лампочек</span></a>
+      </li>
+      <li class="list__item">
+        <a href={{size + "/10"}}>
+          <img class="item__img" src="../static/img/light.svg" alt="light">
+          <span>8 и более</span></a>
+      </li>
+    </li>
+    <li class="list__item">
+      <a href={{size + "/1"}}>
+        <img class="item__img" src="data:image/png;base64,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" alt="light">
+        <span>Наша экологичная сборка</span></a>
+    </li>
+    </ul>
+    
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
